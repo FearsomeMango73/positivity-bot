@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_positivity-bot_main" default="compile.module.positivity-bot_main">
+  <dirname property="module.positivity-bot_main.basedir" file="${ant.file.module_positivity-bot_main}"/>
+  
+  <property name="module.jdk.home.positivity-bot_main" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.positivity-bot_main" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.positivity-bot_main" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.positivity-bot_main" value="-encoding UTF-8 -source 1.8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="positivity-bot_main.output.dir" value="${module.positivity-bot_main.basedir}/../../out/production/classes"/>
+  <property name="positivity-bot_main.testoutput.dir" value="${module.positivity-bot_main.basedir}/../../out/production/classes"/>
+  
+  <path id="positivity-bot_main.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="positivity-bot_main.module.production.classpath">
+    <path refid="${module.jdk.classpath.positivity-bot_main}"/>
+    <path refid="library.gradle:_net.dv8tion:jda:3.6.0_356.classpath"/>
+    <path refid="library.gradle:_com.google.code.findbugs:jsr305:3.0.2.classpath"/>
+    <path refid="library.gradle:_org.slf4j:slf4j-api:1.7.25.classpath"/>
+    <path refid="library.gradle:_org.apache.commons:commons-collections4:4.1.classpath"/>
+    <path refid="library.gradle:_org.json:json:20160810.classpath"/>
+    <path refid="library.gradle:_net.sf.trove4j:trove4j:3.0.3.classpath"/>
+    <path refid="library.gradle:_net.java.dev.jna:jna:4.4.0.classpath"/>
+    <path refid="library.gradle:_com.neovisionaries:nv-websocket-client:2.2.classpath"/>
+    <path refid="library.gradle:_com.squareup.okhttp3:okhttp:3.8.1.classpath"/>
+    <path refid="library.gradle:_com.squareup.okio:okio:1.13.0.classpath"/>
+  </path>
+  
+  <path id="positivity-bot_main.runtime.production.module.classpath">
+    <pathelement location="${positivity-bot_main.output.dir}"/>
+    <path refid="library.gradle:_net.dv8tion:jda:3.6.0_356.classpath"/>
+    <path refid="library.gradle:_com.google.code.findbugs:jsr305:3.0.2.classpath"/>
+    <path refid="library.gradle:_org.slf4j:slf4j-api:1.7.25.classpath"/>
+    <path refid="library.gradle:_org.apache.commons:commons-collections4:4.1.classpath"/>
+    <path refid="library.gradle:_org.json:json:20160810.classpath"/>
+    <path refid="library.gradle:_net.sf.trove4j:trove4j:3.0.3.classpath"/>
+    <path refid="library.gradle:_net.java.dev.jna:jna:4.4.0.classpath"/>
+    <path refid="library.gradle:_com.neovisionaries:nv-websocket-client:2.2.classpath"/>
+    <path refid="library.gradle:_com.squareup.okhttp3:okhttp:3.8.1.classpath"/>
+    <path refid="library.gradle:_com.squareup.okio:okio:1.13.0.classpath"/>
+  </path>
+  
+  <path id="positivity-bot_main.module.classpath">
+    <path refid="${module.jdk.classpath.positivity-bot_main}"/>
+    <pathelement location="${positivity-bot_main.output.dir}"/>
+    <path refid="library.gradle:_net.dv8tion:jda:3.6.0_356.classpath"/>
+    <path refid="library.gradle:_com.google.code.findbugs:jsr305:3.0.2.classpath"/>
+    <path refid="library.gradle:_org.slf4j:slf4j-api:1.7.25.classpath"/>
+    <path refid="library.gradle:_org.apache.commons:commons-collections4:4.1.classpath"/>
+    <path refid="library.gradle:_org.json:json:20160810.classpath"/>
+    <path refid="library.gradle:_net.sf.trove4j:trove4j:3.0.3.classpath"/>
+    <path refid="library.gradle:_net.java.dev.jna:jna:4.4.0.classpath"/>
+    <path refid="library.gradle:_com.neovisionaries:nv-websocket-client:2.2.classpath"/>
+    <path refid="library.gradle:_com.squareup.okhttp3:okhttp:3.8.1.classpath"/>
+    <path refid="library.gradle:_com.squareup.okio:okio:1.13.0.classpath"/>
+  </path>
+  
+  <path id="positivity-bot_main.runtime.module.classpath">
+    <pathelement location="${positivity-bot_main.output.dir}"/>
+    <path refid="library.gradle:_net.dv8tion:jda:3.6.0_356.classpath"/>
+    <path refid="library.gradle:_com.google.code.findbugs:jsr305:3.0.2.classpath"/>
+    <path refid="library.gradle:_org.slf4j:slf4j-api:1.7.25.classpath"/>
+    <path refid="library.gradle:_org.apache.commons:commons-collections4:4.1.classpath"/>
+    <path refid="library.gradle:_org.json:json:20160810.classpath"/>
+    <path refid="library.gradle:_net.sf.trove4j:trove4j:3.0.3.classpath"/>
+    <path refid="library.gradle:_net.java.dev.jna:jna:4.4.0.classpath"/>
+    <path refid="library.gradle:_com.neovisionaries:nv-websocket-client:2.2.classpath"/>
+    <path refid="library.gradle:_com.squareup.okhttp3:okhttp:3.8.1.classpath"/>
+    <path refid="library.gradle:_com.squareup.okio:okio:1.13.0.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.positivity-bot_main">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.positivity-bot_main">
+    <patternset refid="excluded.from.module.positivity-bot_main"/>
+  </patternset>
+  
+  <path id="positivity-bot_main.module.sourcepath">
+    <dirset dir="${module.positivity-bot_main.basedir}/../../src/main">
+      <include name="java"/>
+      <include name="resources"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.positivity-bot_main" depends="compile.module.positivity-bot_main.production,compile.module.positivity-bot_main.tests" description="Compile module positivity-bot_main"/>
+  
+  <target name="compile.module.positivity-bot_main.production" depends="register.custom.compilers" description="Compile module positivity-bot_main; production classes">
+    <mkdir dir="${positivity-bot_main.output.dir}"/>
+    <javac2 destdir="${positivity-bot_main.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.positivity-bot_main}/javac">
+      <compilerarg line="${compiler.args.positivity-bot_main}"/>
+      <bootclasspath refid="positivity-bot_main.module.bootclasspath"/>
+      <classpath refid="positivity-bot_main.module.production.classpath"/>
+      <src refid="positivity-bot_main.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.positivity-bot_main"/>
+    </javac2>
+    
+    <copy todir="${positivity-bot_main.output.dir}">
+      <fileset dir="${module.positivity-bot_main.basedir}/../../src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.positivity-bot_main.basedir}/../../src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.positivity-bot_main.tests" depends="register.custom.compilers,compile.module.positivity-bot_main.production" description="compile module positivity-bot_main; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.positivity-bot_main" description="cleanup module">
+    <delete dir="${positivity-bot_main.output.dir}"/>
+    <delete dir="${positivity-bot_main.testoutput.dir}"/>
+  </target>
+</project>
