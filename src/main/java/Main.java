@@ -95,12 +95,11 @@ public class Main extends ListenerAdapter {
                                   "https://youtu.be/w5tWYmIOWGk", "https://www.youtube.com/watch?v=L6eG1s0tLfI",
                                   "https://www.youtube.com/watch?v=qxZ11xebuBM", "https://www.youtube.com/watch?v=q7RJeGlLobo",
                                   "https://www.youtube.com/watch?v=nfWlot6h_JM", "https://www.youtube.com/watch?v=9wEnYG750j4",
-<<<<<<< HEAD
                                   "https://www.youtube.com/watch?v=oY9m2sHQwLs", "https://www.youtube.com/watch?v=oY9m2sHQwLs",
                                   "https://www.youtube.com/watch?v=_ovdm2yX4MA"
                                 };
 
-        String[] DisneySongs = { "https://www.youtube.com/watch?v=cPAbx5kgCJo", "https://www.youtube.com/watch?v=zgnHF2CwrPs",
+        String[] disneySongs = { "https://www.youtube.com/watch?v=cPAbx5kgCJo", "https://www.youtube.com/watch?v=zgnHF2CwrPs",
                                  "https://www.youtube.com/watch?v=YCyqb0GMfvE", "https://www.youtube.com/watch?v=W-oFqCVNnbM",
                                  "https://www.youtube.com/watch?v=tz6yTajsYwY", "https://www.youtube.com/watch?v=tTuwo_TqlhQ",
                                  "https://www.youtube.com/watch?v=l8UFnc85-xM", "https://www.youtube.com/watch?v=irEBOfv4Ug4",
@@ -117,13 +116,6 @@ public class Main extends ListenerAdapter {
                                  "https://www.youtube.com/watch?v=93lrosBEW-Q", "https://www.youtube.com/watch?v=RYzy8RMGaL0",
                                  "https://www.youtube.com/watch?v=_I1_5mSXinQ", "https://www.youtube.com/watch?v=gOWFbYRGjz8",
                                  "https://www.youtube.com/watch?v=lcNkanA53Fc", "https://www.youtube.com/watch?v=ZiVe-_ZEj8U"
-=======
-                                  "ex"
-                                };
-
-        String[] disneySongs = { "https://www.youtube.com/watch?v=cPAbx5kgCJo", "https://www.youtube.com/watch?v=zgnHF2CwrPs",
-                                 "https://www.youtube.com/watch?v=YCyqb0GMfvE"
->>>>>>> 618e21dae753a5b16d9e798cdec8342376c082ab
                                 };
 
         if(event.getAuthor().isBot()){
