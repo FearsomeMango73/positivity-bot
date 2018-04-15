@@ -1,5 +1,3 @@
-//package main;
-
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
@@ -24,7 +22,7 @@ public class Main extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event){
 
         String[] challenges = {"Go outside and Enjoy the weather",
-                                "Compliment someone you rarely comliment!",
+                                "Compliment someone you rarely compliment!",
                                 "Check up on a friend you haven't talked to in a while.",
                                "Remind a sibling you actually like them. (Or that they aren't ALWAYS annoying, if you'd prefer)",
                                 "Sing one of your favourite songs REALLY LOUDLY! Bonus points for singing into a hairbrush pretend mic.",
@@ -36,7 +34,7 @@ public class Main extends ListenerAdapter {
                                 "ex"
                             };
 
-        String[] stringQuotes = {"Just becuase you're trash does not be you canot do great things. Its calld Garbage can, not Garbage cannot.\n" + "-JaydenW",
+        String[] stringQuotes = {"Just becuase you're trash does not be you can't do great things. Its called Garbage can, not Garbage cannot.\n" + "-JaydenW",
                                 "You can't eat cake for breakfast' *World invents pop-tarts* Yup, challenging our assumptions can = breakthroughs",
                                 "When u feel like u don’t belong: “Nobody exists on purpose. Nobody belongs anywhere. \n" + "- Rick and Morty",
                                 "Yesterday is not ours to recover, but tomorrow is ours to win or lose.\n" + "-Lyndon B. Johnson",
@@ -63,7 +61,6 @@ public class Main extends ListenerAdapter {
                                  "Life is not measured by the number of breaths we take, but by the moments that take our breath away.\n"+"– Maya Angelou",
                                  "ex"};
 
-
         String[] punArray = {"Have a cup of positiviTEA","Donut let anyone tell you you're less thanincrEDIBLE",
                              "Life is good for Optimus Prime. It's even better for Optimist Prime.","Think like a proton. Always positive.",
                              "Everything whale be alright.","Achieve grapeness.",
@@ -72,9 +69,9 @@ public class Main extends ListenerAdapter {
                              "What do lawyers wear to court? A lawsuit.",
                              "No fig deal because YOU GOT THIS!",
                              "You have to be odd to be number one.",
-                            "ex","ex",};
+                             "ex",};
 
-        String[] givingArray = {"You CAN do it, ","Im ROOTing for you, "," is PEARfection!"};
+        String[] givingArray = {"You CAN do it! ","Im ROOTing for you! ","You are PEARfection!"};
 
         String helpList =  "This Bot is for positivity and Mental health. There are multiple resources available to users. Don't be afraid to reach out as you are loved! \n \n " +
                 "Suicide Hotline: 1-800-273-8255\n \n" +
@@ -113,12 +110,21 @@ public class Main extends ListenerAdapter {
         if(event.getMessage().getContentRaw().equals("!ping")){
             event.getChannel().sendMessage("Pong!").queue();
         }
+
         if(event.getMessage().getContentRaw().equals("!help")){
             event.getChannel().sendMessage( helpList ).queue();
         }
-
+        // Main List of Commands
         if(event.getMessage().getContentRaw().equals("!dailyChallenge")){
             event.getChannel().sendMessage( challenges[ (int)(Math.floor(Math.random() * challenges.length)) ] ).queue();
+        }
+
+        if(event.getMessage().getContentRaw().equals("!feelingMagical")){
+            event.getChannel().sendMessage( "Listen in to the Magical Moments of Disney!" + disneySongs[ (int)(Math.floor(Math.random() * disneySongs.length)) ] ).queue();
+        }
+
+        if(event.getMessage().getContentRaw().equals("!goodGrooves")){
+            event.getChannel().sendMessage( "Gotta stay Groovy! Get up and Move!" + goodGrooves[ (int)(Math.floor(Math.random() * goodGrooves.length)) ] ).queue();
         }
 
         if(event.getMessage().getContentRaw().equals("!puntime")){
@@ -129,22 +135,18 @@ public class Main extends ListenerAdapter {
             event.getChannel().sendMessage( givingArray[ (int)(Math.floor(Math.random() * givingArray.length)) ] ).queue();
         }
 
-        if(event.getMessage().getContentRaw().equals("feeling sad")){
-            event.getChannel().sendMessage( "Dont feel sad! You just gotta get up and Dance with me!" + goodGrooves[ (int)(Math.floor(Math.random() * goodGrooves.length)) ] ).queue();
-        }
-        if(event.getMessage().getContentRaw().equals("!goodGrooves")){
-            event.getChannel().sendMessage( "Gotta stay Groovy! Get up and Move!" + goodGrooves[ (int)(Math.floor(Math.random() * goodGrooves.length)) ] ).queue();
-        }
-        if(event.getMessage().getContentRaw().equals("!feelingMagicial")){
-            event.getChannel().sendMessage( "Listen in to the Magical Moments of Disney!" + disneySongs[ (int)(Math.floor(Math.random() * disneySongs.length)) ] ).queue();
-        }
-
         if(event.getMessage().getContentRaw().equals("!quotes")){
             event.getChannel().sendMessage( stringQuotes[ (int)(Math.floor(Math.random() * stringQuotes.length)) ] ).queue();
         }
 
+        //Phrases that get picked up and said funny things
+        // meme worthy things
         if(event.getMessage().getContentRaw().equals("damn")){
             event.getChannel().sendMessage("Did you mean: Dazzling Artistry My Neighbor!").queue();
+        }
+
+        if(event.getMessage().getContentRaw().equals("feeling sad")){
+            event.getChannel().sendMessage( "Dont feel sad! You just gotta get up and Dance with me!" + goodGrooves[ (int)(Math.floor(Math.random() * goodGrooves.length)) ] ).queue();
         }
 
         if(event.getMessage().getContentRaw().equals("fuck")){
@@ -164,12 +166,9 @@ public class Main extends ListenerAdapter {
             event.getChannel().sendMessage("Fordham University?").queue();
         }
 
-        // send memes
+        // testing area before moved in line of things
         if(event.getMessage().getContentRaw().equals("!meme")) {
             event.getChannel().sendFile(new File(".../images/dog1.jpg"));
         }
-
     }
-
-
 }
