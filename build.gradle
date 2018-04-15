@@ -20,3 +20,5 @@ repositories {
 dependencies {
     compile 'net.dv8tion:JDA:3.6.0_356'
 }
+
+compileJava.options.encoding = 'UTF-8'
