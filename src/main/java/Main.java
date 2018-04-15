@@ -33,6 +33,24 @@ public class Main extends ListenerAdapter {
         }
 
 
+
+        if(event.getMessage().getContentRaw().equals("damn")){
+            event.getChannel().sendMessage("Did you mean: Dazzling Artistry My Neighbor!").queue();
+        }
+        if(event.getMessage().getContentRaw().equals("fuck")){
+            event.getChannel().sendMessage("*ahem* Try \"Golly Gee Whiz\" next time!").queue();
+        }
+        if(event.getMessage().getContentRaw().equals("asshole")){
+            event.getChannel().sendMessage("The word arse in English derives from the Germanic root -arsaz, which " +
+                    "originated from the Proto-Indo-European root -ors, meaning \"buttocks\" or \"backside\". " +
+                    "The combined form arsehole is first attested from 1500 in its literal use to refer to the anus. " +
+                    "The metaphorical use of the word to refer to the worst place in a region (e.g., \"the arsehole of the world\"), " +
+                    "is first attested in print in 1865; the use to refer to a contemptible person is first attested in 1933. " +
+                    "Interesting fact: Pablo Picasso was never called an asshole.").queue();
+        }
+        if(event.getMessage().getContentRaw().equals("fu")) {
+            event.getChannel().sendMessage("Fordham University?").queue();
+        }
     }
 
 
