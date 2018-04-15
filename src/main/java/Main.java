@@ -6,6 +6,7 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;
+import java.io.File;
 
 public class Main extends ListenerAdapter {
 
@@ -46,6 +47,18 @@ public class Main extends ListenerAdapter {
 
         String[] goodGrooves = {"https://www.youtube.com/watch?v=u7o3LR1WN8E&index=9"};
 
+        String helpList =  "This Bot is for positivity and Mental health. There are multiple resources available to users. Don't be afraid to reach out as you are loved! \n \n " +
+                "Suicide Hotline: 1-800-273-8255\n \n" +
+                "Counseling Services: contacting your counseling resource center on Campus\n \n" +
+                "Commands: !ping \n  " +
+                "!dailyChallenge \n " +
+                "!puntime \n " +
+                "!sendSomeLove \n " +
+                "feeling sad \n " +
+                "!goodGrooves \n " +
+                "!quotes \n " +
+                "!memes \n " ;
+
         if(event.getAuthor().isBot()){
             return;
         }
@@ -57,6 +70,9 @@ public class Main extends ListenerAdapter {
         if(event.getMessage().getContentRaw().equals("!ping")){
             event.getChannel().sendMessage("Pong!").queue();
         }
+        if(event.getMessage().getContentRaw().equals("!help")){
+            event.getChannel().sendMessage( helpList ).queue();
+        }
 
         if(event.getMessage().getContentRaw().equals("!dailyChallenge")){
             event.getChannel().sendMessage( challenges[ (int)(Math.floor(Math.random() * challenges.length)) ] ).queue();
@@ -66,12 +82,12 @@ public class Main extends ListenerAdapter {
             event.getChannel().sendMessage( punArray[ (int)(Math.floor(Math.random() * punArray.length)) ] ).queue();
         }
 
-        if(event.getMessage().getContentRaw().equals("You are loved")){
+        if(event.getMessage().getContentRaw().equals("!sendSomeLove")){
             event.getChannel().sendMessage( givingArray[ (int)(Math.floor(Math.random() * givingArray.length)) ] ).queue();
         }
 
         if(event.getMessage().getContentRaw().equals("feeling sad")){
-            event.getChannel().sendMessage( "Dont feel sad! you just gotta get up and Dance with me!" + goodGrooves[ (int)(Math.floor(Math.random() * goodGrooves.length)) ] ).queue();
+            event.getChannel().sendMessage( "Dont feel sad! You just gotta get up and Dance with me!" + goodGrooves[ (int)(Math.floor(Math.random() * goodGrooves.length)) ] ).queue();
         }
         if(event.getMessage().getContentRaw().equals("!goodGrooves")){
             event.getChannel().sendMessage( "Gotta stay Groovy! Get up and Move!" + goodGrooves[ (int)(Math.floor(Math.random() * goodGrooves.length)) ] ).queue();
@@ -100,6 +116,11 @@ public class Main extends ListenerAdapter {
 
         if(event.getMessage().getContentRaw().equals("f u")) {
             event.getChannel().sendMessage("Fordham University?").queue();
+        }
+
+        // send memes
+        if(event.getMessage().getContentRaw().equals("!meme")) {
+            event.getChannel().sendFile(new File(".../images/dog1.jpg"));
         }
 
     }
