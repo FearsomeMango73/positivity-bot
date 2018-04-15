@@ -21,16 +21,16 @@ public class Main extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event){
-        String[] challenges = {"Go outside and Enjoy the weather","",
-                "ex","ex",
+        String[] challenges = {"Go outside and Enjoy the weather!","Meet someone new",
+                "Leave an Inspirational Message for someone else!","ex",
                 "ex","ex",
                 "ex","ex"};
 
         String[] stringQuotes = {"Yesterday is not ours to recover, but tomorrow is ours to win or lose.\n" + "-Lyndon B. Johnson","Yesterday is history, tomorrow is a mystery, and today is a gift...That's why they call it present!\n" + "-Master Oogway, Kung Fu Panda ",
                 "Just becuase you're trash does not be you canot do great things. Its calld Garbage can, not Garbage cannot.\n" + "-JaydenW","You can't eat cake for breakfast' *World invents pop-tarts* Yup, challenging our assumptions can = breakthroughs",
                 "When u feel like u don’t belong: “Nobody exists on purpose. Nobody belongs anywhere. \n" + "- Rick and Morty","ex",
-                "ex","ex",
-                "ex","ex",
+                "Have a 'guilt-playlist' that plays on repeat? Try this radical thing today: Let it go! Let it go!","Luck, like gratitude, isn't about what happens today. It's about how you *see* it.",
+                "“Reality is wrong. Dreams are for real.” – Tupac","ex",
                 "ex","ex"};
 
         String[] punArray = {"Have a cup of positiviTEA","Donut let anyone tell you you're less thanincrEDIBLE",
@@ -44,7 +44,7 @@ public class Main extends ListenerAdapter {
                 "ex","ex",};
         String[] givingArray = {"You CAN do it, ","Im ROOTing for you, "," is PEARfection!"};
 
-        String[] positiveArray = {"https://www.youtube.com/watch?v=u7o3LR1WN8E&index=9"};
+        String[] goodGrooves = {"https://www.youtube.com/watch?v=u7o3LR1WN8E&index=9"};
 
         if(event.getAuthor().isBot()){
             return;
@@ -70,8 +70,11 @@ public class Main extends ListenerAdapter {
             event.getChannel().sendMessage( givingArray[ (int)(Math.floor(Math.random() * givingArray.length)) ] ).queue();
         }
 
-        if(event.getMessage().getContentRaw().equals("sad")){
-            event.getChannel().sendMessage( "Dont feel sad! you just gotta get up annd Dance with me!" + positiveArray[ (int)(Math.floor(Math.random() * positiveArray.length)) ] ).queue();
+        if(event.getMessage().getContentRaw().equals("feeling sad")){
+            event.getChannel().sendMessage( "Dont feel sad! you just gotta get up and Dance with me!" + goodGrooves[ (int)(Math.floor(Math.random() * goodGrooves.length)) ] ).queue();
+        }
+        if(event.getMessage().getContentRaw().equals("!goodGrooves")){
+            event.getChannel().sendMessage( "Gotta stay Groovy! Get up and Move!" + goodGrooves[ (int)(Math.floor(Math.random() * goodGrooves.length)) ] ).queue();
         }
 
         if(event.getMessage().getContentRaw().equals("!quotes")){
