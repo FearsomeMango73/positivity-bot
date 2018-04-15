@@ -15,8 +15,27 @@ public class Main extends ListenerAdapter {
         builder.setToken(token);
         builder.addEventListener(new Main());
         builder.buildAsync();
-        //String[]
+        //string[30] stringQuotes;
+        //punArray[20];
     }
+
+    /*stringQuotes[0]="Yesterday is not ours to recover, but tomorrow is ours to win or lose.
+     -Lyndon B. Johnson
+     ";
+    stringQuotes[1]="Yesterday is history, tomorrow is a mystery, and today is a gift...That's why they call it present!
+    -Master Oogway, Kung Fu Panda
+    "; */
+
+    /*
+    punArray[0]="Have a cup of positiviTEA";
+    punArray[1]="Donut let anyone tell you you're less thanincrEDIBLE";
+    punArray[2]="Life is good for Optimus Prime. It's even better for Optimist Prime.";
+    punArray[3]="Think like a proton. Always positive.";
+    punArray[4]="Everything whale be alright.";
+    punArray[5]="Achieve grapeness.";
+    */
+
+
     @Override
     public void onMessageReceived(MessageReceivedEvent event){
         if(event.getAuthor().isBot()){
