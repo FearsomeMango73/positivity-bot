@@ -6,6 +6,7 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;
+import java.lang.reflect.Member;
 
 public class Main extends ListenerAdapter {
 
@@ -16,7 +17,11 @@ public class Main extends ListenerAdapter {
         builder.addEventListener(new Main());
         builder.buildAsync();
         //String[]
+        //List&lt;Member&gt; mentionedMembers = commandEvent.getMessage().getMentionedMembers();
+        //Member victim = mentionedMembers.get(0);
     }
+
+
     @Override
     public void onMessageReceived(MessageReceivedEvent event){
         if(event.getAuthor().isBot()){
@@ -25,6 +30,7 @@ public class Main extends ListenerAdapter {
         System.out.println("We received a message from"+
                 event.getAuthor().getName() + ":" +
                 event.getMessage().getContentDisplay() );
+
         if(event.getMessage().getContentRaw().equals("!ping")){
             event.getChannel().sendMessage("Pong!").queue();
         }
