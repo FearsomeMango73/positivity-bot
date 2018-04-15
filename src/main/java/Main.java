@@ -26,9 +26,17 @@ public class Main extends ListenerAdapter {
                                 "Compliment someone you rarely comliment!",
                                 "Check up on a friend you haven't talked to in a while.",
                                "Remind a sibling you actually like them. (Or that they aren't ALWAYS annoying, if you'd prefer)",
-                                "ex","ex",
-                                "ex","ex",
-                                "ex","ex"};
+                                "Sing one of your favourite songs REALLY LOUDLY! Bonus points for singing into a hairbrush pretend mic.",
+                                "Tell someone you appreciate them.",
+                                "Give a someone who needs it a hug!",
+                                "Take a step back from the stress and reflect on some accomplishments. List three things you've accomplished this week/month.",
+                                "Close your eyes and take the deeeeeepest breath you can.",
+                                "Take a moment to reflect on something you're grateful for.",
+                                "",
+                                "",
+                                "",
+                                ""
+                            };
 
         String[] stringQuotes = {"Just becuase you're trash does not be you canot do great things. Its calld Garbage can, not Garbage cannot.\n" + "-JaydenW",
                                 "You can't eat cake for breakfast' *World invents pop-tarts* Yup, challenging our assumptions can = breakthroughs",
@@ -75,7 +83,20 @@ public class Main extends ListenerAdapter {
 
         String[] givingArray = {"You CAN do it, ","Im ROOTing for you, "," is PEARfection!"};
 
-        String[] positiveArray = {"https://www.youtube.com/watch?v=u7o3LR1WN8E&index=9"};
+        String[] positiveArray = {"https://www.youtube.com/watch?v=u7o3LR1WN8E&index=9","https://www.youtube.com/watch?v=ZbZSe6N_BXs",
+                                  "https://www.youtube.com/watch?v=ru0K8uYEZWw", "https://www.youtube.com/watch?v=0IagRZBvLtw",
+                                  "https://youtu.be/3OnnDqH6Wj8", "https://youtu.be/uSD4vsh1zDA",
+                                  "https://youtu.be/6JCLY0Rlx6Q", "https://www.youtube.com/watch?v=L_jWHffIx5E",
+                                  "https://youtu.be/w5tWYmIOWGk", "https://www.youtube.com/watch?v=L6eG1s0tLfI",
+                                  "https://www.youtube.com/watch?v=qxZ11xebuBM", "https://www.youtube.com/watch?v=q7RJeGlLobo",
+                                  "https://www.youtube.com/watch?v=nfWlot6h_JM", "https://www.youtube.com/watch?v=9wEnYG750j4",
+                                  "", "",
+                                  ""
+                                };
+
+        String[] DisneySongs = { "https://www.youtube.com/watch?v=cPAbx5kgCJo", "https://www.youtube.com/watch?v=zgnHF2CwrPs",
+                                 "https://www.youtube.com/watch?v=YCyqb0GMfvE"
+                                };
 
         if(event.getAuthor().isBot()){
             return;
