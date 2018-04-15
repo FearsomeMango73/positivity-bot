@@ -73,17 +73,20 @@ public class Main extends ListenerAdapter {
 
         String[] givingArray = {"You CAN do it! ","Im ROOTing for you! ","You are PEARfection!"};
 
-        String helpList =  "This Bot is for positivity and Mental health. There are multiple resources available to users. Don't be afraid to reach out as you are loved! \n \n " +
+        String helpList =  "This Bot is for positivity and Mental health. There are multiple resources available to users. Don't be afraid to reach out as you are loved! \n \n" +
                 "Suicide Hotline: 1-800-273-8255\n \n" +
                 "Counseling Services: contacting your counseling resource center on Campus\n \n" +
-                "Commands: \n!ping \n " +
-                "!dailyChallenge \n " +
-                "!puntime \n " +
-                "!sendSomeLove \n " +
-                "feeling sad \n " +
-                "!goodGrooves \n " +
-                "!quotes \n " +
-                "!meme \n " ;
+                "Commands: \n " +
+                "!dailyChallenge \t Get a Daily Challenge to Improve Yourself! \n " +
+                "!feelingMagical \t FeelingMagical? Listen to Disney Music\n " +
+                "!goodGrooves \t Listen to an Uplifting Song! \n " +
+                "!help \t Displays a list of commands\n " +
+                "!ping \t Checks to see if the bot is online\n " +
+                "!puntime \t Are you in for a puntime? \n " +
+                "!quotes \t Reflect on a Random Quote.\n" +
+                "Testing: \n " +
+                "!sendSomeLove \t Sending a Person some love( Will display a message but will not tag a person... yet! )\n " +
+                "!meme \t Display some positive memes! ( still in progress ) \n " ;
 
         String[] goodGrooves = {"https://www.youtube.com/watch?v=u7o3LR1WN8E&index=9","https://www.youtube.com/watch?v=ZbZSe6N_BXs",
                                   "https://www.youtube.com/watch?v=ru0K8uYEZWw", "https://www.youtube.com/watch?v=0IagRZBvLtw",
@@ -107,13 +110,14 @@ public class Main extends ListenerAdapter {
                 event.getAuthor().getName() + ":" +
                 event.getMessage().getContentDisplay() );
 
+        if(event.getMessage().getContentRaw().equals("!help")){
+            event.getChannel().sendMessage( helpList ).queue();
+        }
+
         if(event.getMessage().getContentRaw().equals("!ping")){
             event.getChannel().sendMessage("Pong!").queue();
         }
 
-        if(event.getMessage().getContentRaw().equals("!help")){
-            event.getChannel().sendMessage( helpList ).queue();
-        }
         // Main List of Commands
         if(event.getMessage().getContentRaw().equals("!dailyChallenge")){
             event.getChannel().sendMessage( challenges[ (int)(Math.floor(Math.random() * challenges.length)) ] ).queue();
