@@ -27,8 +27,8 @@ public class Main extends ListenerAdapter {
                 "ex","ex"};
 
         String[] stringQuotes = {"Yesterday is not ours to recover, but tomorrow is ours to win or lose.\n" + "-Lyndon B. Johnson","Yesterday is history, tomorrow is a mystery, and today is a gift...That's why they call it present!\n" + "-Master Oogway, Kung Fu Panda ",
-                "Just becuase you're trash does not be you canot do great things. Its calld Garbage can, not Garbage cannot.\n" + "-JaydenW","",
-                "ex","ex",
+                "Just becuase you're trash does not be you canot do great things. Its calld Garbage can, not Garbage cannot.\n" + "-JaydenW","You can't eat cake for breakfast' *World invents pop-tarts* Yup, challenging our assumptions can = breakthroughs",
+                "When u feel like u don’t belong: “Nobody exists on purpose. Nobody belongs anywhere. \n" + "- Rick and Morty","ex",
                 "ex","ex",
                 "ex","ex",
                 "ex","ex"};
@@ -43,6 +43,8 @@ public class Main extends ListenerAdapter {
                 "ex","ex",
                 "ex","ex",};
         String[] givingArray = {"You CAN do it, ","Im ROOTing for you, "," is PEARfection!"};
+
+        String[] positiveArray = {"https://www.youtube.com/watch?v=u7o3LR1WN8E&index=9"};
 
         if(event.getAuthor().isBot()){
             return;
@@ -66,6 +68,10 @@ public class Main extends ListenerAdapter {
 
         if(event.getMessage().getContentRaw().equals("You are loved")){
             event.getChannel().sendMessage( givingArray[ (int)(Math.floor(Math.random() * givingArray.length)) ] ).queue();
+        }
+
+        if(event.getMessage().getContentRaw().equals("sad")){
+            event.getChannel().sendMessage( "Dont feel sad! you just gotta get up annd Dance with me!" + positiveArray[ (int)(Math.floor(Math.random() * positiveArray.length)) ] ).queue();
         }
 
         if(event.getMessage().getContentRaw().equals("!quotes")){
