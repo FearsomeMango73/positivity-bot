@@ -16,41 +16,33 @@ public class Main extends ListenerAdapter {
         builder.setToken(token);
         builder.addEventListener(new Main());
         builder.buildAsync();
-        String[] challenges = {"","",
-                               "","",
-                               "","",
-                               "","",
-                               "","",
-                               "","",
-                               "","",
-                               "","",
-                               "","",};
 
-        String[] stringQuotes = {"Yesterday is not ours to recover, but tomorrow is ours to win or lose.\n" + "-Lyndon B. Johnson","Yesterday is history, tomorrow is a mystery, and today is a gift...That's why they call it present!\n" + "-Master Oogway, Kung Fu Panda ",
-                             "","",
-                             "","",
-                             "","",
-                             "","",
-                             "","",
-                             "","",
-                             "","",
-                             "","",};
-
-        String[] punArray = {"Have a cup of positiviTEA","Donut let anyone tell you you're less thanincrEDIBLE",
-                             "Life is good for Optimus Prime. It's even better for Optimist Prime.","Think like a proton. Always positive.",
-                             "Everything whale be alright.","Achieve grapeness.",
-                             "","How does a Computer get drunk? It takes screenSHOTS XD",
-                             "","",
-                             "","",
-                             "","",
-                             "","",
-                             "","",};
-        double randResult = (int)(Math.random() * punArray.length);
-        CharSequence result = punArray[(int)randResult];
     }
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event){
+        String[] challenges = {"Go outside and Enjoy the weather","",
+                "ex","ex",
+                "ex","ex",
+                "ex","ex"};
+
+        String[] stringQuotes = {"Yesterday is not ours to recover, but tomorrow is ours to win or lose.\n" + "-Lyndon B. Johnson","Yesterday is history, tomorrow is a mystery, and today is a gift...That's why they call it present!\n" + "-Master Oogway, Kung Fu Panda ",
+                "Just becuase you're trash does not be you canot do great things. Its calld Garbage can, not Garbage cannot.\n" + "-JaydenW","",
+                "ex","ex",
+                "ex","ex",
+                "ex","ex",
+                "ex","ex"};
+
+        String[] punArray = {"Have a cup of positiviTEA","Donut let anyone tell you you're less thanincrEDIBLE",
+                "Life is good for Optimus Prime. It's even better for Optimist Prime.","Think like a proton. Always positive.",
+                "Everything whale be alright.","Achieve grapeness.",
+                "Always BEE yourself.","How does a Computer get drunk? It takes screenSHOTS ",
+                "ex","ex",
+                "ex","ex",
+                "ex","ex",
+                "ex","ex",
+                "ex","ex",};
+        String[] givingArray = {"You CAN do it, ","Im ROOTing for you, "," is PEARfection!"};
 
         if(event.getAuthor().isBot()){
             return;
@@ -64,8 +56,20 @@ public class Main extends ListenerAdapter {
             event.getChannel().sendMessage("Pong!").queue();
         }
 
+        if(event.getMessage().getContentRaw().equals("!dailyChallenge")){
+            event.getChannel().sendMessage( challenges[ (int)(Math.floor(Math.random() * challenges.length)) ] ).queue();
+        }
+
         if(event.getMessage().getContentRaw().equals("!puntime")){
-            event.getChannel().sendMessage( "Im twigging").queue();
+            event.getChannel().sendMessage( punArray[ (int)(Math.floor(Math.random() * punArray.length)) ] ).queue();
+        }
+
+        if(event.getMessage().getContentRaw().equals("You are loved")){
+            event.getChannel().sendMessage( givingArray[ (int)(Math.floor(Math.random() * givingArray.length)) ] ).queue();
+        }
+
+        if(event.getMessage().getContentRaw().equals("!quotes")){
+            event.getChannel().sendMessage( stringQuotes[ (int)(Math.floor(Math.random() * stringQuotes.length)) ] ).queue();
         }
 
         if(event.getMessage().getContentRaw().equals("damn")){
