@@ -18,9 +18,6 @@ public class Main extends ListenerAdapter {
         builder.addEventListener(new Main());
         builder.buildAsync();
     
-
-        String[] stringQuotes = {
-                         };
     }
 
     @Override
