@@ -6,7 +6,6 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;
-import java.lang.reflect.Member;
 
 public class Main extends ListenerAdapter {
 
@@ -16,7 +15,8 @@ public class Main extends ListenerAdapter {
         builder.setToken(token);
         builder.addEventListener(new Main());
         builder.buildAsync();
-        //String[]
+        String[] challenges = {"",
+                                ""};
         //List&lt;Member&gt; mentionedMembers = commandEvent.getMessage().getMentionedMembers();
         //Member victim = mentionedMembers.get(0);
     }
@@ -24,9 +24,11 @@ public class Main extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event){
+
         if(event.getAuthor().isBot()){
             return;
         }
+
         System.out.println("We received a message from"+
                 event.getAuthor().getName() + ":" +
                 event.getMessage().getContentDisplay() );
@@ -34,18 +36,19 @@ public class Main extends ListenerAdapter {
         if(event.getMessage().getContentRaw().equals("!ping")){
             event.getChannel().sendMessage("Pong!").queue();
         }
+
         if(event.getMessage().getContentRaw().equals("!puntime")){
             event.getChannel().sendMessage("How does a Computer get drunk? It takes screenSHOTS XD").queue();
         }
 
-
-
         if(event.getMessage().getContentRaw().equals("damn")){
             event.getChannel().sendMessage("Did you mean: Dazzling Artistry My Neighbor!").queue();
         }
+
         if(event.getMessage().getContentRaw().equals("fuck")){
             event.getChannel().sendMessage("*ahem* Try \"Golly Gee Whiz\" next time!").queue();
         }
+
         if(event.getMessage().getContentRaw().equals("asshole")){
             event.getChannel().sendMessage("The word arse in English derives from the Germanic root -arsaz, which " +
                     "originated from the Proto-Indo-European root -ors, meaning \"buttocks\" or \"backside\". " +
@@ -54,9 +57,11 @@ public class Main extends ListenerAdapter {
                     "is first attested in print in 1865; the use to refer to a contemptible person is first attested in 1933. " +
                     "Interesting fact: Pablo Picasso was never called an asshole.").queue();
         }
-        if(event.getMessage().getContentRaw().equals("fu")) {
+
+        if(event.getMessage().getContentRaw().equals("f u")) {
             event.getChannel().sendMessage("Fordham University?").queue();
         }
+
     }
 
 
