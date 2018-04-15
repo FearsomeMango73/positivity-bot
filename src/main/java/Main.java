@@ -6,6 +6,7 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;
+import java.lang.reflect.Member;
 
 public class Main extends ListenerAdapter {
 
@@ -15,6 +16,7 @@ public class Main extends ListenerAdapter {
         builder.setToken(token);
         builder.addEventListener(new Main());
         builder.buildAsync();
+<<<<<<< HEAD
         //string[30] stringQuotes;
         //punArray[20];
     }
@@ -35,6 +37,13 @@ public class Main extends ListenerAdapter {
     punArray[5]="Achieve grapeness.";
     */
 
+=======
+        //String[]
+        //List&lt;Member&gt; mentionedMembers = commandEvent.getMessage().getMentionedMembers();
+        //Member victim = mentionedMembers.get(0);
+    }
+
+>>>>>>> 0a5a5059ed953f005ebaee31c8fa840bf9c01c5c
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event){
@@ -44,6 +53,7 @@ public class Main extends ListenerAdapter {
         System.out.println("We received a message from"+
                 event.getAuthor().getName() + ":" +
                 event.getMessage().getContentDisplay() );
+
         if(event.getMessage().getContentRaw().equals("!ping")){
             event.getChannel().sendMessage("Pong!").queue();
         }
@@ -52,6 +62,24 @@ public class Main extends ListenerAdapter {
         }
 
 
+
+        if(event.getMessage().getContentRaw().equals("damn")){
+            event.getChannel().sendMessage("Did you mean: Dazzling Artistry My Neighbor!").queue();
+        }
+        if(event.getMessage().getContentRaw().equals("fuck")){
+            event.getChannel().sendMessage("*ahem* Try \"Golly Gee Whiz\" next time!").queue();
+        }
+        if(event.getMessage().getContentRaw().equals("asshole")){
+            event.getChannel().sendMessage("The word arse in English derives from the Germanic root -arsaz, which " +
+                    "originated from the Proto-Indo-European root -ors, meaning \"buttocks\" or \"backside\". " +
+                    "The combined form arsehole is first attested from 1500 in its literal use to refer to the anus. " +
+                    "The metaphorical use of the word to refer to the worst place in a region (e.g., \"the arsehole of the world\"), " +
+                    "is first attested in print in 1865; the use to refer to a contemptible person is first attested in 1933. " +
+                    "Interesting fact: Pablo Picasso was never called an asshole.").queue();
+        }
+        if(event.getMessage().getContentRaw().equals("fu")) {
+            event.getChannel().sendMessage("Fordham University?").queue();
+        }
     }
 
 
