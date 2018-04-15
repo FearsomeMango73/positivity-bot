@@ -168,7 +168,12 @@ public class Main extends ListenerAdapter {
 
         // testing area before moved in line of things
         if(event.getMessage().getContentRaw().equals("!meme")) {
-            event.getChannel().sendFile(new File(".../images/dog1.jpg"));
+            try {
+                File meme = new File(".../images/dog1.jpg");
+                event.getChannel().sendFile(meme);
+            } catch (Exception e){
+                e.printStackTrace();
+            }
         }
     }
 }
