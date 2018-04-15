@@ -1,5 +1,3 @@
-//package main;
-
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
@@ -22,8 +20,9 @@ public class Main extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event){
+
         String[] challenges = {"Go outside and Enjoy the weather",
-                                "Compliment someone you rarely comliment!",
+                                "Compliment someone you rarely compliment!",
                                 "Check up on a friend you haven't talked to in a while.",
                                "Remind a sibling you actually like them. (Or that they aren't ALWAYS annoying, if you'd prefer)",
                                 "Sing one of your favourite songs REALLY LOUDLY! Bonus points for singing into a hairbrush pretend mic.",
@@ -32,13 +31,10 @@ public class Main extends ListenerAdapter {
                                 "Take a step back from the stress and reflect on some accomplishments. List three things you've accomplished this week/month.",
                                 "Close your eyes and take the deeeeeepest breath you can.",
                                 "Take a moment to reflect on something you're grateful for.",
-                                "",
-                                "",
-                                "",
-                                ""
+                                "ex"
                             };
 
-        String[] stringQuotes = {"Just becuase you're trash does not be you canot do great things. Its calld Garbage can, not Garbage cannot.\n" + "-JaydenW",
+        String[] stringQuotes = {"Just becuase you're trash does not be you can't do great things. Its called Garbage can, not Garbage cannot.\n" + "-JaydenW",
                                 "You can't eat cake for breakfast' *World invents pop-tarts* Yup, challenging our assumptions can = breakthroughs",
                                 "When u feel like u don’t belong: “Nobody exists on purpose. Nobody belongs anywhere. \n" + "- Rick and Morty",
                                 "Yesterday is not ours to recover, but tomorrow is ours to win or lose.\n" + "-Lyndon B. Johnson",
@@ -59,13 +55,11 @@ public class Main extends ListenerAdapter {
                                  "When the whole world is silent, even one voice becomes powerful.\n"+"-Malala Yousafzai",
                                  "One never notices what has been done; one can only see what remains to be done.\n"+"-Marie Curie",
                                  "We were scared, but our fear was not as strong as our courage.\n"+"-Malala Yousafzai",
-                                 "Make the most of yourself by fanning the tiny, inner sparks of possibility into flames of achievement.\n"+"-Golda Meir"
+                                 "Make the most of yourself by fanning the tiny, inner sparks of possibility into flames of achievement.\n"+"-Golda Meir",
                                  "The most difficult thing is the decision to act, the rest is merely tenacity.\n"+"-Amelia Earhart",
                                  "I’d rather regret the things I’ve done than regret the things I haven’t done.\n"+"-Lucille Ball",
-                                 "Life is not measured by the number of breaths we take, but by the moments that take our breath away.\n"+"– Maya Angelou"
-                                "ex","ex",
-                                "ex","ex",
-                                "ex","ex"};
+                                 "Life is not measured by the number of breaths we take, but by the moments that take our breath away.\n"+"– Maya Angelou",
+                                 "ex"};
 
         String[] punArray = {"Have a cup of positiviTEA","Donut let anyone tell you you're less thanincrEDIBLE",
                              "Life is good for Optimus Prime. It's even better for Optimist Prime.","Think like a proton. Always positive.",
@@ -75,21 +69,33 @@ public class Main extends ListenerAdapter {
                              "What do lawyers wear to court? A lawsuit.",
                              "No fig deal because YOU GOT THIS!",
                              "You have to be odd to be number one.",
-                            "ex","ex",
-                            "ex","ex",
-                            "ex","ex",
-                            "ex","ex",
-                            "ex","ex",};
+                             "ex",};
 
-        String[] givingArray = {"You CAN do it, ","Im ROOTing for you, "," is PEARfection!"};
+        String[] givingArray = {"You CAN do it! ","Im ROOTing for you! ","You are PEARfection!"};
 
-        String[] positiveArray = {"https://www.youtube.com/watch?v=u7o3LR1WN8E&index=9","https://www.youtube.com/watch?v=ZbZSe6N_BXs",
+        String helpList =  "This Bot is for positivity and Mental health. There are multiple resources available to users. Don't be afraid to reach out as you are loved! \n \n" +
+                "Suicide Hotline: 1-800-273-8255\n \n" +
+                "Counseling Services: contacting your counseling resource center on Campus\n \n" +
+                "Commands: \n " +
+                "!dailyChallenge \t Get a Daily Challenge to Improve Yourself! \n " +
+                "!feelingMagical \t FeelingMagical? Listen to Disney Music\n " +
+                "!goodGrooves \t Listen to an Uplifting Song! \n " +
+                "!help \t Displays a list of commands\n " +
+                "!ping \t Checks to see if the bot is online\n " +
+                "!puntime \t Are you in for a puntime? \n " +
+                "!quotes \t Reflect on a Random Quote.\n" +
+                "Testing: \n " +
+                "!sendSomeLove \t Sending a Person some love( Will display a message but will not tag a person... yet! )\n " +
+                "!meme \t Display some positive memes! ( still in progress ) \n " ;
+
+        String[] goodGrooves = {"https://www.youtube.com/watch?v=u7o3LR1WN8E&index=9","https://www.youtube.com/watch?v=ZbZSe6N_BXs",
                                   "https://www.youtube.com/watch?v=ru0K8uYEZWw", "https://www.youtube.com/watch?v=0IagRZBvLtw",
                                   "https://youtu.be/3OnnDqH6Wj8", "https://youtu.be/uSD4vsh1zDA",
                                   "https://youtu.be/6JCLY0Rlx6Q", "https://www.youtube.com/watch?v=L_jWHffIx5E",
                                   "https://youtu.be/w5tWYmIOWGk", "https://www.youtube.com/watch?v=L6eG1s0tLfI",
                                   "https://www.youtube.com/watch?v=qxZ11xebuBM", "https://www.youtube.com/watch?v=q7RJeGlLobo",
                                   "https://www.youtube.com/watch?v=nfWlot6h_JM", "https://www.youtube.com/watch?v=9wEnYG750j4",
+<<<<<<< HEAD
                                   "https://www.youtube.com/watch?v=oY9m2sHQwLs", "https://www.youtube.com/watch?v=oY9m2sHQwLs",
                                   "https://www.youtube.com/watch?v=_ovdm2yX4MA"
                                 };
@@ -111,6 +117,13 @@ public class Main extends ListenerAdapter {
                                  "https://www.youtube.com/watch?v=93lrosBEW-Q", "https://www.youtube.com/watch?v=RYzy8RMGaL0",
                                  "https://www.youtube.com/watch?v=_I1_5mSXinQ", "https://www.youtube.com/watch?v=gOWFbYRGjz8",
                                  "https://www.youtube.com/watch?v=lcNkanA53Fc", "https://www.youtube.com/watch?v=ZiVe-_ZEj8U"
+=======
+                                  "ex"
+                                };
+
+        String[] disneySongs = { "https://www.youtube.com/watch?v=cPAbx5kgCJo", "https://www.youtube.com/watch?v=zgnHF2CwrPs",
+                                 "https://www.youtube.com/watch?v=YCyqb0GMfvE"
+>>>>>>> 618e21dae753a5b16d9e798cdec8342376c082ab
                                 };
 
         if(event.getAuthor().isBot()){
@@ -121,32 +134,47 @@ public class Main extends ListenerAdapter {
                 event.getAuthor().getName() + ":" +
                 event.getMessage().getContentDisplay() );
 
+        if(event.getMessage().getContentRaw().equals("!help")){
+            event.getChannel().sendMessage( helpList ).queue();
+        }
+
         if(event.getMessage().getContentRaw().equals("!ping")){
             event.getChannel().sendMessage("Pong!").queue();
         }
 
+        // Main List of Commands
         if(event.getMessage().getContentRaw().equals("!dailyChallenge")){
             event.getChannel().sendMessage( challenges[ (int)(Math.floor(Math.random() * challenges.length)) ] ).queue();
+        }
+
+        if(event.getMessage().getContentRaw().equals("!feelingMagical")){
+            event.getChannel().sendMessage( "Listen in to the Magical Moments of Disney!" + disneySongs[ (int)(Math.floor(Math.random() * disneySongs.length)) ] ).queue();
+        }
+
+        if(event.getMessage().getContentRaw().equals("!goodGrooves")){
+            event.getChannel().sendMessage( "Gotta stay Groovy! Get up and Move!" + goodGrooves[ (int)(Math.floor(Math.random() * goodGrooves.length)) ] ).queue();
         }
 
         if(event.getMessage().getContentRaw().equals("!puntime")){
             event.getChannel().sendMessage( punArray[ (int)(Math.floor(Math.random() * punArray.length)) ] ).queue();
         }
 
-        if(event.getMessage().getContentRaw().equals("You are loved")){
+        if(event.getMessage().getContentRaw().equals("!sendSomeLove")){
             event.getChannel().sendMessage( givingArray[ (int)(Math.floor(Math.random() * givingArray.length)) ] ).queue();
-        }
-
-        if(event.getMessage().getContentRaw().equals("sad")){
-            event.getChannel().sendMessage( "Dont feel sad! you just gotta get up annd Dance with me!" + positiveArray[ (int)(Math.floor(Math.random() * positiveArray.length)) ] ).queue();
         }
 
         if(event.getMessage().getContentRaw().equals("!quotes")){
             event.getChannel().sendMessage( stringQuotes[ (int)(Math.floor(Math.random() * stringQuotes.length)) ] ).queue();
         }
 
+        //Phrases that get picked up and said funny things
+        // meme worthy things
         if(event.getMessage().getContentRaw().equals("damn")){
             event.getChannel().sendMessage("Did you mean: Dazzling Artistry My Neighbor!").queue();
+        }
+
+        if(event.getMessage().getContentRaw().equals("feeling sad")){
+            event.getChannel().sendMessage( "Dont feel sad! You just gotta get up and Dance with me!" + goodGrooves[ (int)(Math.floor(Math.random() * goodGrooves.length)) ] ).queue();
         }
 
         if(event.getMessage().getContentRaw().equals("fuck")){
@@ -166,12 +194,14 @@ public class Main extends ListenerAdapter {
             event.getChannel().sendMessage("Fordham University?").queue();
         }
 
-        // send memes
+        // testing area before moved in line of things
         if(event.getMessage().getContentRaw().equals("!meme")) {
-            event.getChannel().sendFile(new File(".../images/dog1.jpg"));
+            try {
+                File meme = new File(".../images/dog1.jpg");
+                event.getChannel().sendFile(meme);
+            } catch (Exception e){
+                e.printStackTrace();
+            }
         }
-
     }
-
-
 }
