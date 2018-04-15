@@ -1,6 +1,7 @@
 plugins{
     id 'java'
     id 'application'
+   // id 'com.github.fearsomemango73.shadow' version '2.0.3'
 }
 
 mainClassName = "Main"
@@ -8,6 +9,7 @@ mainClassName = "Main"
 group 'com.fearsomemangobot'
 version '1.0-SNAPSHOT'
 
+//apply plugin: 'com.github.fearsomemango73.shadow'
 apply plugin: 'java'
 
 sourceCompatibility = 1.8
