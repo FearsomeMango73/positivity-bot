@@ -6,6 +6,7 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
 import javax.security.auth.login.LoginException;
+import java.io.File;
 
 public class Main extends ListenerAdapter {
 
@@ -130,6 +131,11 @@ public class Main extends ListenerAdapter {
 
         if(event.getMessage().getContentRaw().equals("f u")) {
             event.getChannel().sendMessage("Fordham University?").queue();
+        }
+
+        // send memes
+        if(event.getMessage().getContentRaw().equals("!meme")) {
+            event.getChannel().sendFile(new File(".../images/dog1.jpg"));
         }
 
     }
