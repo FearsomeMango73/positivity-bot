@@ -1,10 +1,13 @@
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.AccountType;
+import net.dv8tion.jda.core.entities.User;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
-
+import net.dv8tion.jda.core.EmbedBuilder;
+import java.awt.Color;
 import javax.security.auth.login.LoginException;
 import java.io.File;
+import java.time.LocalDateTime;
 
 public class Main extends ListenerAdapter {
 
@@ -31,10 +34,10 @@ public class Main extends ListenerAdapter {
                                 "Take a step back from the stress and reflect on some accomplishments. List three things you've accomplished this week/month.",
                                 "Close your eyes and take the deeeeeepest breath you can.",
                                 "Take a moment to reflect on something you're grateful for.",
-                                "ex"
+                                "Take a moment to write down something productive you have done"
                             };
 
-        String[] stringQuotes = {"Just becuase you're trash does not be you can't do great things. Its called Garbage can, not Garbage cannot.\n" + "-JaydenW",
+        String[] stringQuotes = {"Just because you're trash does not be you can't do great things. Its called Garbage can, not Garbage cannot.\n" + "-JaydenW",
                                 "You can't eat cake for breakfast' *World invents pop-tarts* Yup, challenging our assumptions can = breakthroughs",
                                 "When u feel like u don’t belong: “Nobody exists on purpose. Nobody belongs anywhere. \n" + "- Rick and Morty",
                                 "Yesterday is not ours to recover, but tomorrow is ours to win or lose.\n" + "-Lyndon B. Johnson",
@@ -48,7 +51,7 @@ public class Main extends ListenerAdapter {
                                  "Good, better, best. Never let it rest. 'Til your good is better and your better is best.\n"+"-St. Jerome",
                                  "Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.\n"+"-Helen Keller",
                                  "With the new day comes new strength and new thoughts.\n"+"-Eleanor Roosevelt",
-                                 "I seenow that the circumstances of one's birth are irrelevant. It is what you do with the gift of life that determines who you are.\n"+"-Mewtwo, Pokemon",
+                                 "I see now that the circumstances of one's birth are irrelevant. It is what you do with the gift of life that determines who you are.\n"+"-Mewtwo, Pokemon",
                                  "We do have a lot in common. The same earth, the same air, the same sky. Maybe if we started looking at what's the same...instead of always looking at what's different, well, who knows?\n"+"-Meowth, Pokemon",
                                  "We can't just give up because things aren't the way we want them to be.\n"+"-Piccolo, Dragonball",
                                  "Life is not easy for any of us. But what of that? We must have perseverance and above all confidence in ourselves. We must believe that we are gifted for something and that this thing must be attained.\n"+"-Marie Curie",
@@ -59,19 +62,23 @@ public class Main extends ListenerAdapter {
                                  "The most difficult thing is the decision to act, the rest is merely tenacity.\n"+"-Amelia Earhart",
                                  "I’d rather regret the things I’ve done than regret the things I haven’t done.\n"+"-Lucille Ball",
                                  "Life is not measured by the number of breaths we take, but by the moments that take our breath away.\n"+"– Maya Angelou",
-                                 "ex"};
+                                 "Life is so ironic, it takes sadness to know what happiness is, noise to appreciate silence and absence to value presence.",
+                                 "Its okay to be a glowstick! Sometimes we need to break before we shine",
+                                 "Evaluate the people in your life; then promote, demote or terminate. You are the CEO of your life."};
 
-        String[] punArray = {"Have a cup of positiviTEA","Donut let anyone tell you you're less thanincrEDIBLE",
-                             "Life is good for Optimus Prime. It's even better for Optimist Prime.","Think like a proton. Always positive.",
-                             "Everything whale be alright.","Achieve grapeness.",
-                             "","How does a Computer get drunk? It takes screenSHOTS XD",
-                             "What do you call a funny quantum physicist? A silly string theorist.",
-                             "What do lawyers wear to court? A lawsuit.",
-                             "No fig deal because YOU GOT THIS!",
-                             "You have to be odd to be number one.",
-                             "ex",};
+        String[] punArray = {"Have a cup of positiviTEA","Donut let anyone tell you you're less thanincrEDIBLE", "You just need some encourageMINT!",
+                             "Life is good for Optimus Prime. It's even better for Optimist Prime.","Think like a proton. Always positive.", "",
+                             "Everything whale be alright.","Achieve grapeness.", "BEE Yourself",
+                             "How does a Computer get drunk? It takes screenSHOTS XD", "We are ROOTing for you!",
+                             "What do you call a funny quantum physicist? A silly string theorist.", "You are not an impasta. You deserve to be here!",
+                             "What do lawyers wear to court? A lawsuit.", "Its okay to be a glowstick! Sometimes we need to break before we shine",
+                             "No fig deal because YOU GOT THIS!", "You thought this was punny? Try to create your own puns!",
+                             "You have to be odd to be number one.", "You've left me s-peach-less!",
+                             "Lettuce do our best!", "This graveyard looks overcrowded. People must be dying to get in there.",
+                             "Love you FIGure!", "Need a drink? We need to raise the bar on these puns."
+                             };
 
-        String[] givingArray = {"You CAN do it! ","Im ROOTing for you! ","You are PEARfection!"};
+        String[] givingArray = {"You CAN do it, " ,"Im ROOTing for you, ","You are PEARfection, "};
 
         String helpList =  "This Bot is for positivity and Mental health. There are multiple resources available to users. Don't be afraid to reach out as you are loved! \n \n" +
                 "Suicide Hotline: 1-800-273-8255\n \n" +
@@ -96,7 +103,7 @@ public class Main extends ListenerAdapter {
                                   "https://www.youtube.com/watch?v=qxZ11xebuBM", "https://www.youtube.com/watch?v=q7RJeGlLobo",
                                   "https://www.youtube.com/watch?v=nfWlot6h_JM", "https://www.youtube.com/watch?v=9wEnYG750j4",
                                   "https://www.youtube.com/watch?v=oY9m2sHQwLs", "https://www.youtube.com/watch?v=oY9m2sHQwLs",
-                                  "https://www.youtube.com/watch?v=_ovdm2yX4MA"
+                                  "https://www.youtube.com/watch?v=_ovdm2yX4MA", "https://www.youtube.com/watch?v=aJOTlE1K90k&start_radio=1"
                                 };
 
         String[] disneySongs = { "https://www.youtube.com/watch?v=cPAbx5kgCJo", "https://www.youtube.com/watch?v=zgnHF2CwrPs",
@@ -121,10 +128,46 @@ public class Main extends ListenerAdapter {
         if(event.getAuthor().isBot()){
             return;
         }
+        // working on how to have multiple arguments:
+        // String[] argArray = event.getMessage().getContent().split(" ");
 
-        System.out.println("We received a message from"+
+        System.out.println("We received a message from "+
                 event.getAuthor().getName() + ":" +
                 event.getMessage().getContentDisplay() );
+
+        if(event.getMessage().getContentRaw().startsWith("!!say")){
+            event.getChannel().sendMessage(event.getMessage().getContentRaw().substring(6)).queue();
+            event.getMessage().delete().queue();
+        }
+
+
+        if(event.getMessage().getContentRaw().startsWith("!testBuild")) {
+
+            EmbedBuilder builder = new EmbedBuilder();
+
+            builder.addField("fieldTitleInline", "fieldContentInline", true);
+            builder.addField("fieldTitleInline2", "fieldContentInline2", true);
+            builder.addField("fieldTitleNotInline", "fieldContentNotInline", false);
+            builder.addField(":tada: fieldWithCoolThings :tada:", "[hiddenLink](http://i.imgur.com/Y9utuDe.png)", false);
+
+            builder.setAuthor("authorName", "http://i.imgur.com/oPvYFj3.png", "http://i.imgur.com/PB0Soqj.png");
+
+            builder.setColor(Color.red);
+            builder.setDescription("withDesc");
+            builder.setTitle("withTitle");
+            builder.setTimestamp(LocalDateTime.now());
+            builder.setImage("http://i.imgur.com/IrEVKQq.png");
+            builder.setImage("http://i.imgur.com/agsp5Re.png");
+
+            builder.setFooter( "footerText","http://i.imgur.com/TELh8OT.png");
+            builder.setThumbnail("http://i.imgur.com/7heQOCt.png");
+
+            builder.appendDescription(" + appendDesc");
+            builder.appendDescription(" + appendDescription");
+
+           event.getChannel().sendMessage(builder.build()).queue();
+        }
+
 
         if(event.getMessage().getContentRaw().equals("!help")){
             event.getChannel().sendMessage( helpList ).queue();
@@ -151,8 +194,16 @@ public class Main extends ListenerAdapter {
             event.getChannel().sendMessage( punArray[ (int)(Math.floor(Math.random() * punArray.length)) ] ).queue();
         }
 
-        if(event.getMessage().getContentRaw().equals("!sendSomeLove")){
-            event.getChannel().sendMessage( givingArray[ (int)(Math.floor(Math.random() * givingArray.length)) ] ).queue();
+        if(event.getMessage().getContentRaw().startsWith("!sendSomeLove")){
+
+            if(event.getMessage().getMentionedUsers().isEmpty()){
+                event.getChannel().sendMessage("You must mention 1 or more Users to use this command").queue();
+                }
+            else {
+               User mentionedUserID = event.getMessage().getMentionedUsers().get(0);
+               String mentionedUser = "<@!" + mentionedUserID.getId() + ">";
+            event.getChannel().sendMessage(givingArray[(int) (Math.floor(Math.random() * givingArray.length))] + mentionedUser).queue();
+            }
         }
 
         if(event.getMessage().getContentRaw().equals("!quotes")){
@@ -182,18 +233,23 @@ public class Main extends ListenerAdapter {
                     "Interesting fact: Pablo Picasso was never called an asshole.").queue();
         }
 
-        if(event.getMessage().getContentRaw().equals("f u")) {
+        if(event.getMessage().getContentRaw().equals("fuck you")) {
             event.getChannel().sendMessage("Fordham University?").queue();
+        }
+
+        if(event.getMessage().getContentRaw().equals("oh yea?")){
+            event.getChannel().sendMessage("Oh yea?").queue();
         }
 
         // testing area before moved in line of things
         if(event.getMessage().getContentRaw().equals("!meme")) {
-            try {
-                File meme = new File(".../images/dog1.jpg");
-                event.getChannel().sendFile(meme);
-            } catch (Exception e){
-                e.printStackTrace();
-            }
+            event.getChannel().sendMessage("The Memes are not fruity enough at this currant thyme.").queue();
+            //try {
+            //    File meme = new File(".../images/dog1.jpg");
+            //    event.getChannel().sendFile(meme);
+            //} catch (Exception e){
+            //    e.printStackTrace();
+            //}
         }
     }
 }
